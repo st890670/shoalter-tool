@@ -15,3 +15,8 @@
 - 載入未封裝項目
   ![](https://i.imgur.com/jNZLFKQ.png)
 - 選擇專案 build folder 即可
+
+## 開發注意事項
+
+- 修改`public/manifest.json`
+- 使用`/*global chrome*/`讓 eslint 不檢查 chrome API
