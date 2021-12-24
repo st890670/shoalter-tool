@@ -13,7 +13,7 @@
   ![](https://i.imgur.com/JphjcVz.png)
 - 載入未封裝項目
   ![](https://i.imgur.com/jNZLFKQ.png)
-- 選擇專案即可
+- 選擇專案底下的 extension-tool 資料夾即可
 
 ## 開發注意事項
 
