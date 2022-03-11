@@ -7,5 +7,10 @@
   "action": {
     "default_popup": "index.html"
   },
-  "incognito": "split"
+  "incognito": "split",
+  "icons": {
+    "16": "logo.svg",
+    "48": "logo.svg",
+    "128": "logo.svg"
+  }
 }
