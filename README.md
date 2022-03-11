@@ -7,6 +7,8 @@
 ## 安裝方式
 
 - 將整個 repository clone 回 local
+- npm install
+- npm run build
 - 管理擴充功能
   ![](https://i.imgur.com/UZUi7Zvl.png)
 - 右上角打開開發人員模式

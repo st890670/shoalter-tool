@@ -6,5 +6,6 @@
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "index.html"
-  }
+  },
+  "incognito": "split"
 }
