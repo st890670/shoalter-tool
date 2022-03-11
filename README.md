@@ -4,7 +4,14 @@
 
 - [Jason Jiang](https://github.com/st890670)
 
-## 安裝方式
+## 安裝方式(自動)
+
+- 將整個 repository clone 回 local
+- npm install
+- npm run build
+- 執行 install.bat (會將所有 chrome 瀏覽器都關掉才安裝)
+
+## 安裝方式(手動)
 
 - 將整個 repository clone 回 local
 - npm install
