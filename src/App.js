@@ -19,30 +19,27 @@ function App() {
     }
   }
 
-  async function handleClickAddCookie() {
+  async function addCookie() {
     try {
       await chrome.cookies.set({
         url: `${currentURL?.protocol}//${currentURL?.hostname}`,
         name: "test",
         value: "true",
       });
-
-      setMessage(`add test cookie success.`);
     } catch (error) {
-      setMessage(`Unexpected error: ${error.message}`);
+      throw error;
     }
   }
 
-  async function handleRemoveAllCookies() {
+  async function removeAllCookies() {
     try {
       const cookies = await chrome.cookies.getAll({
         domain: currentURL.hostname,
       });
       let pendingPromises = cookies.map(deleteCookie);
       await Promise.all(pendingPromises);
-      setMessage(`remove cookies of ${currentURL.hostname} success`);
     } catch (error) {
-      setMessage(`Unexpected error: ${error.message}`);
+      throw error;
     }
   }
 
@@ -56,6 +53,16 @@ function App() {
     });
   }
 
+  async function handleManipulateCookie() {
+    try {
+      await removeAllCookies();
+      await addCookie();
+      setMessage("success!");
+    } catch (error) {
+      setMessage("something wrong!");
+    }
+  }
+
   return (
     <div className="App">
       <div class="shoalter-tool">
@@ -65,28 +72,11 @@ function App() {
         </div>
 
         <div class="content">
-          {/* <div class="card mb-3">
-            <div class="card-body">
-              <div class="card-title">test</div>
-              <div class="card-subtitle mb-2 text-muted">test</div>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div> */}
-
-          <button
-            class="btn btn-outline-primary mb-1"
-            onClick={handleClickAddCookie}
-          >
-            Add Test Cookie
-          </button>
           <button
             class="btn btn-outline-danger"
-            onClick={handleRemoveAllCookies}
+            onClick={handleManipulateCookie}
           >
-            Remove Cookies
+            Remove Cookies and Add Test Cookie
           </button>
         </div>
         <div class="footer">
