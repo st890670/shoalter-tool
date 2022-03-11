@@ -19,5 +19,5 @@
 
 ## 開發注意事項
 
-- 修改`public/manifest.json`
+- 修改`public/manifest.json`後記得下 npm run build
 - 使用`/*global chrome*/`讓 eslint 不檢查 chrome API
