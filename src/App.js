@@ -53,11 +53,21 @@ function App() {
     });
   }
 
+  function reloadCurrentPage() {
+    chrome.tabs.query(
+      { active: true, currentWindow: true },
+      function (arrayOfTabs) {
+        chrome.tabs.reload(arrayOfTabs[0].id);
+      }
+    );
+  }
+
   async function handleManipulateCookie() {
     try {
       await removeAllCookies();
       await addCookie();
       setMessage("success!");
+      reloadCurrentPage();
     } catch (error) {
       setMessage("something wrong!");
     }

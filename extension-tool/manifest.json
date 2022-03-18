@@ -2,7 +2,7 @@
   "name": "Shoalter Tool",
   "manifest_version": 3,
   "version": "1.0",
-  "permissions": ["cookies"],
+  "permissions": ["cookies", "history"],
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "index.html"
